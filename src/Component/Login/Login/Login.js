@@ -2,12 +2,15 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({})
+    const {user, loginUser, isLoding, authError} = useAuth()
+    const location = useLocation();
 
     const handleonBlur= e =>{
         const field = e.target.name;
@@ -19,7 +22,7 @@ const Login = () => {
         e.preventDefault()
     }
     const handleLogin= e =>{
-        // loginUser(loginData.email, loginData.password, location, history)
+        loginUser(loginData.email, loginData.password, location)
         e.preventDefault()
     }
 
@@ -60,9 +63,9 @@ const Login = () => {
                     </NavLink>
                     {/* ========================= */}
                     </form>
-                    {/* {isLoding && <CircularProgress />}
+                    {isLoding && <CircularProgress />}
                     {user?.email && <Alert severity="success">Login successfully!</Alert>}
-                    {authError && <Alert severity="error">{authError}</Alert>} */}
+                    {authError && <Alert severity="error">{authError}</Alert>}
                 </Typography>
                 </Grid>
                 <Grid item sx={{mt: 8}} xs={12} md={6}>
