@@ -1,16 +1,18 @@
+import React from 'react';
+import {useDispatch, useSelector } from 'react-redux';
+import ProductComponent from '../ProductComponent/ProductComponent';
+import { useEffect } from 'react';
 import axios from 'axios';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '../../../redux/actions/produceActions';
-import AllproductComponent from '../AddProducts/AllproductComponent';
 
 const Allproducts = () => {
+
     const products = useSelector((state)=>state);
     const dispatch = useDispatch();
 
     const fetchProducts = async () =>{
         const response = await axios 
-        .get("https://arcane-dawn-96246.herokuapp.com/products")
+        .get("http://localhost:5000/products")
         .catch((error)=>{
             console.log("err", error)
         });
@@ -24,7 +26,7 @@ const Allproducts = () => {
 
     return (
         <div className='ui grid container'>
-            <AllproductComponent></AllproductComponent>
+            <ProductComponent></ProductComponent>
         </div>
     );
 };

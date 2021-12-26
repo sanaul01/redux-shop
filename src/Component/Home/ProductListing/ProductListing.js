@@ -12,7 +12,7 @@ const ProductListing = () => {
 
     const fetchProducts = async () =>{
         const response = await axios 
-        .get("https://arcane-dawn-96246.herokuapp.com/products")
+        .get("http://localhost:5000/products")
         .catch((error)=>{
             console.log("err", error)
         });

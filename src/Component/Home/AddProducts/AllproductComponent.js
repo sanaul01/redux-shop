@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const AllproductComponent = () => {
-    const products = useSelector((state)=>state.allProducts.products.products);
-    const renderList = products?.map((product) => {
+
+    const products = useSelector((state)=>state.allProducts.products);
+    const renderList = products?.slice(0, 8).map((product) => {
         const {_id, name, verssion, price, image} = product;
         return(
             <div className='four wide column mt-5' key = {_id}>

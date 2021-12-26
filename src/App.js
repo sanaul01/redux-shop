@@ -11,8 +11,8 @@ import PrivateRoute from './Component/Login/PrivateRoute/PrivateRoute';
 import AddProducts from './Component/Home/AddProducts/AddProducts';
 // import Allproducts from './Component/Home/AllProducts/Allproducts';
 import AllproductComponent from './Component/Home/AddProducts/AllproductComponent';
-import Dashbord from './Component/Dashbord/Dashbord/Dashbord';
 import Navigation from './Component/Shared/Navigation/Navigation';
+import Users from './Component/Home/Users/Users';
 
 
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/add" element={<AddProducts/>} />
-          <Route exact path="/dashbord" element={<Dashbord/>} />
+          <Route exact path="/user" element={<Users/>} />
           <Route path="/allproduct" element={<PrivateRoute><AllproductComponent/></PrivateRoute>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

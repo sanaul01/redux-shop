@@ -35,6 +35,12 @@ const Navigation = () => {
                 <NavLink to='/allproduct' style={{textDecoration: 'none', color: 'white'}}>
                     <Button color="inherit">AllProduct</Button>
                 </NavLink>
+                <NavLink to='/add' style={{textDecoration: 'none', color: 'white'}}>
+                    <Button color="inherit">Added Product</Button>
+                </NavLink>
+                <NavLink to='/user' style={{textDecoration: 'none', color: 'white'}}>
+                    <Button color="inherit">ManageUser</Button>
+                </NavLink>
                 
                 {
                     user?.email ?
