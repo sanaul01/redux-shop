@@ -14,7 +14,7 @@ const ProductDetails = () => {
     console.log(product)
 
     const fetchProductDetail = async () =>{
-        const response = await axios.get(`http://localhost:5000/products/${productId}`)
+        const response = await axios.get(`https://sleepy-chamber-69050.herokuapp.com/products/${productId}`)
         .catch((error) =>{
             console.log(error);
         });

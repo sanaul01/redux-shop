@@ -92,7 +92,7 @@ const useFirebase = () =>{
   
       const saveUser = (email, displayName) =>{
         const user = {email, displayName}
-        fetch('http://localhost:5000/users', {
+        fetch('https://sleepy-chamber-69050.herokuapp.com/users', {
           method: 'POST',
           headers: {
             'content-type' : 'application/json'

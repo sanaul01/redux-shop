@@ -23,7 +23,7 @@ const AddProducts = () => {
             ...addedProduct
         }
         
-        fetch('http://localhost:5000/products', {
+        fetch('https://sleepy-chamber-69050.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

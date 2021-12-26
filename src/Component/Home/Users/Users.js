@@ -10,7 +10,7 @@ const Users = () => {
 
     const fetchProducts = async () =>{
         const response = await axios 
-        .get("http://localhost:5000/users")
+        .get("https://sleepy-chamber-69050.herokuapp.com/users")
         .catch((error)=>{
             console.log("err", error)
         });
