@@ -25,8 +25,8 @@ function App() {
         <Routes>
           <Route path="home" element={<Home />} />
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/add" element={<AddProducts/>} />
-          <Route exact path="/user" element={<Users/>} />
+          <Route exact path="/add" element={<PrivateRoute><AddProducts/></PrivateRoute>} />
+          <Route exact path="/user" element={<PrivateRoute><Users/></PrivateRoute>} />
           <Route path="/allproduct" element={<PrivateRoute><AllproductComponent/></PrivateRoute>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

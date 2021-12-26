@@ -25,7 +25,7 @@ const ProductListing = () => {
     console.log("products: ",products)
 
     return (
-        <div className='ui grid container'>
+        <div className='ui grid container mb-5'>
             <ProductComponent></ProductComponent>
         </div>
     );
