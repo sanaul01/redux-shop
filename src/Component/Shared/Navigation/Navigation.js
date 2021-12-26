@@ -15,32 +15,44 @@ const Navigation = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-            <Toolbar>
-            <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-            >
-                <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Shop
-            </Typography>
-            <NavLink to="/addproduct">Product</NavLink>
-            {
-                user?.email ?
-                <Button onClick={logOut} color="inherit">Logout</Button>
-                :
-                <NavLink style={{textDecoration: 'none', color: 'white'}} to="/login">
-                    <Button color="inherit">Login</Button>
+            <AppBar position="static">
+                <Toolbar>
+                <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    sx={{ mr: 2 }}
+                >
+                    <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    Shop-Zone
+                </Typography>
+                <NavLink to='/home' style={{textDecoration: 'none', color: 'white'}}>
+                    <Button color="inherit">Home</Button>
                 </NavLink>
-            }
-            </Toolbar>
-        </AppBar>
-        </Box>
+                <NavLink to='/allproduct' style={{textDecoration: 'none', color: 'white'}}>
+                    <Button color="inherit">AllProduct</Button>
+                </NavLink>
+                
+                {
+                    user?.email ?
+                    <Box>
+                        {/* <NavLink to='/dashbord' style={{textDecoration: 'none', color: 'white'}}>
+                            <Button color="inherit">Dashboard</Button>
+                        </NavLink> */}
+                        <Button onClick={logOut} color="inherit">LogOut :</Button>
+                    </Box>
+                    :
+                    <NavLink to='/login' style={{textDecoration: 'none', color: 'white'}}>
+                    <Button color="inherit">Login</Button>
+                    </NavLink>
+                }
+                <Typography>{user.displayName}</Typography>
+                </Toolbar>
+            </AppBar>
+            </Box>
     );
 };
 

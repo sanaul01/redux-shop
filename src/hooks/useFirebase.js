@@ -15,7 +15,7 @@ const useFirebase = () =>{
     const navigate = useNavigate();
 
     const auth = getAuth();
-    const registerUser = (email, password,name, history) =>{
+    const registerUser = (email, password,name,location) =>{
         setIsLoding(true);
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -32,7 +32,10 @@ const useFirebase = () =>{
               
             });
 
-            history.replace('/')
+            if(location.state?.from){
+                navigate(location.state.from )
+            }
+            // history.replace('/')
           })
           .catch((error) => {
             setAuthError(error.message)
@@ -89,7 +92,7 @@ const useFirebase = () =>{
   
       const saveUser = (email, displayName) =>{
         const user = {email, displayName}
-        fetch('', {
+        fetch('http://localhost:5000/users', {
           method: 'POST',
           headers: {
             'content-type' : 'application/json'

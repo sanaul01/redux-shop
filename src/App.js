@@ -9,6 +9,10 @@ import Register from './Component/Login/Register/Register';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './Component/Login/PrivateRoute/PrivateRoute';
 import AddProducts from './Component/Home/AddProducts/AddProducts';
+// import Allproducts from './Component/Home/AllProducts/Allproducts';
+import AllproductComponent from './Component/Home/AddProducts/AllproductComponent';
+import Dashbord from './Component/Dashbord/Dashbord/Dashbord';
+import Navigation from './Component/Shared/Navigation/Navigation';
 
 
 
@@ -17,10 +21,13 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
+        <Navigation></Navigation>
         <Routes>
           <Route path="home" element={<Home />} />
           <Route exact path="/" element={<Home />} />
-          <Route path="/addproduct" element={<PrivateRoute><AddProducts/></PrivateRoute>}/>
+          <Route exact path="/add" element={<AddProducts/>} />
+          <Route exact path="/dashbord" element={<Dashbord/>} />
+          <Route path="/allproduct" element={<PrivateRoute><AllproductComponent/></PrivateRoute>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="product/:productId" element={<ProductDetails />} />
